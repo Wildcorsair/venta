@@ -1,7 +1,7 @@
 export interface Message {
-  messageId: number;
+  id: number;
+  contactId: number;
   isIncoming: boolean;
-  avatar: string;
   content: string;
   createdAt: string;
 }
