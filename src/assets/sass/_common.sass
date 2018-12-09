@@ -15,7 +15,7 @@
 
     /** Contact list **/
     .contact-title
-      padding: 0 15px
+      padding: 0 15px 0 25px
       display: flex
       justify-content: space-between
       height: 45px
@@ -29,16 +29,17 @@
       font-weight: 600
 
     .search
-      padding: 7px 0
+      padding: 7px 10px 7px 15px
       font-size: 18px
 
 
       input
-        color: #BDBDBD
-        padding: 0 25px 0 0
+        color: $inputTextColor
+        padding: 2px 25px 2px 0
         border-top: none
         border-left: none
         border-right: none
+        width: 100%
         border-bottom: 1px solid $borderColor
         outline: none
         font-size: 16px
@@ -59,7 +60,7 @@
         border: none
         position: absolute
         top: 7px
-        right: 15px
+        right: 25px
         background-color: transparent
         cursor: pointer
 
@@ -68,6 +69,16 @@
 
         &:hover
           color: #585858
+
+    .avatar
+      width: 64px
+      height: 64px
+      border-radius: 50%
+      overflow: hidden
+
+      img
+        width: 64px
+        height: 64px
 
     .contact-list-container
       height: 569px
@@ -83,14 +94,6 @@
 
         &:hover
           background-color: #F2F2F2
-
-        .avatar
-          border-radius: 50%
-          overflow: hidden
-
-          img
-            width: 64px
-            height: 64px
 
         .contact-content
           display: flex
@@ -113,5 +116,85 @@
 
     /** Message list **/
     .message-list-container
+      height: 559px
+      overflow-y: auto
+
+      .outcoming
+        justify-content: flex-end
 
       .message-item
+        display: flex
+        padding: 15px
+
+      .message-content-container
+        padding-left: 20px
+        width: 60%
+
+        .message-text
+          padding: 10px
+          border-radius: 4px
+
+        .incoming-message
+          color: $incomingMessageColor
+          background-color: $incomingMessageBgColor
+
+        .outcoming-message
+          color: $outcomingMessageColor
+          background-color: $outcomingMessageBgColor
+
+        .message-date
+          padding-top: 10px
+          font-size: 12px
+          color: #BDBDBD
+
+    .message-send-container
+      height: 55px
+      line-height: 28px
+      padding: 10px 25px
+      display: flex
+      justify-content: space-between
+      border-top: 1px solid $borderColor
+
+      .send-message-text
+        color: $inputTextColor
+        font-size: 16px
+        width: 90%
+        border: none
+        outline: none
+
+        &::-webkit-input-placeholder
+          color: $placeholderColor
+        &::-moz-placeholder
+          color: $placeholderColor
+        &:-ms-input-placeholder
+          color: $placeholderColor
+        &:-moz-placeholder
+          color: $placeholderColor
+
+    .send-message-button
+      position: relative
+      color: #fff
+      width: 36px
+      height: 36px
+      border: none
+      outline: none
+      border-radius: 50%
+      background-color: $outcomingMessageBgColor
+
+      i
+        position: absolute
+        top: 9px
+        left: 7px
+        font-size: 18px
+
+    .send-message-button:focus
+      outline: none
+
+@media screen and (max-width: 767px)
+  .main
+    margin-top: 0
+    margin-bottom: 0
+    border: 0
+
+    .column
+      border: 0
