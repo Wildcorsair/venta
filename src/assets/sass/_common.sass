@@ -1,0 +1,117 @@
+.main
+  font-family: $fontFamily
+  font-size: 14px
+  font-weight: normal
+  margin-top: 10px
+  margin-bottom: 10px
+  border: 1px solid $borderColor
+
+  .column
+    padding-left: 0
+    padding-right: 0
+
+    &:first-child
+      border-right: 1px solid $borderColor
+
+    /** Contact list **/
+    .contact-title
+      padding: 0 15px
+      display: flex
+      justify-content: space-between
+      height: 45px
+      border-bottom: 1px solid $borderColor
+
+    .contact-title-text
+      color: $titleColor
+      line-height: 45px
+      font-family: inherit
+      font-size: 16px
+      font-weight: 600
+
+    .search
+      padding: 7px 0
+      font-size: 18px
+
+
+      input
+        color: #BDBDBD
+        padding: 0 25px 0 0
+        border-top: none
+        border-left: none
+        border-right: none
+        border-bottom: 1px solid $borderColor
+        outline: none
+        font-size: 16px
+
+        &::-webkit-input-placeholder
+          color: $placeholderColor
+        &::-moz-placeholder
+          color: $placeholderColor
+        &:-ms-input-placeholder
+          color: $placeholderColor
+        &:-moz-placeholder
+          color: $placeholderColor
+
+      .search-button
+        width: 25px
+        height: 25px
+        outline: none
+        border: none
+        position: absolute
+        top: 7px
+        right: 15px
+        background-color: transparent
+        cursor: pointer
+
+      i
+        color: #848484
+
+        &:hover
+          color: #585858
+
+    .contact-list-container
+      height: 569px
+      overflow-y: auto
+
+      .contact-item
+        padding: 15px
+        display: flex
+        cursor: pointer
+
+        &:not(:last-child)
+          border-bottom: 1px solid $borderColor
+
+        &:hover
+          background-color: #F2F2F2
+
+        .avatar
+          border-radius: 50%
+          overflow: hidden
+
+          img
+            width: 64px
+            height: 64px
+
+        .contact-content
+          display: flex
+          flex-direction: column
+          justify-content: flex-start
+          padding-left: 20px
+          width: 80%
+          color: #585858
+          font-weight: 500
+
+          .contact-content-title
+            display: flex
+            justify-content: space-between
+            font-weight: 700
+
+          .message
+            height: 40px
+            color: #BDBDBD
+            overflow: hidden
+
+    /** Message list **/
+    .message-list-container
+
+      .message-item
