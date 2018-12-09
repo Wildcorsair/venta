@@ -1,0 +1,12 @@
+<div *ngFor="let contact of contacts" class="contact-item" (click)="onContactItemClick(contact.id, contact.avatar)">
+  <div class="avatar">
+    <img src="{{ contact.avatar }}" alt="Avatar">
+  </div>
+  <div class="contact-content">
+    <div class="contact-content-title">
+      <div class="author">{{ contact.name }}</div>
+      <div class="author">{{ contact.createdAt | date:'MMM d' }}</div>
+    </div>
+    <div class="message">{{ contact.lastMessage}}</div>
+  </div>
+</div>

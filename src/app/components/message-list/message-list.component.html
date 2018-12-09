@@ -1,0 +1,14 @@
+<!-- Message list content -->
+<div class="message-list-container">
+
+  <app-message-item *ngIf="!isEmpty; else noMessages" [avatar]="avatar" [messages]="messages"></app-message-item>
+  <ng-template #noMessages>
+    <div class="alert-no-messages">No messages for this conversation</div>
+  </ng-template>
+
+</div>
+<!-- /Message list content -->
+<form class="message-send-container">
+  <input class="send-message-text" type="text" name="message" placeholder="Type a message">
+  <button class="send-message-button"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
+</form>

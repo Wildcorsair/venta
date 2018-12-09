@@ -1,0 +1,201 @@
+.main
+  font-family: $fontFamily
+  font-size: 14px
+  font-weight: normal
+  margin-top: 10px
+  margin-bottom: 10px
+  border: 1px solid $borderColor
+
+  .column
+    padding-left: 0
+    padding-right: 0
+    height: 97vh
+
+    &:first-child
+      border-right: 1px solid $borderColor
+
+    /** Contact list **/
+    .contact-title
+      padding: 0 15px 0 25px
+      display: flex
+      justify-content: space-between
+      height: 45px
+      border-bottom: 1px solid $borderColor
+
+    .contact-title-text
+      color: $titleColor
+      line-height: 45px
+      font-family: inherit
+      font-size: 16px
+      font-weight: 600
+
+    .search
+      padding: 7px 10px 7px 15px
+      font-size: 18px
+
+
+      input
+        color: $inputTextColor
+        padding: 2px 25px 2px 0
+        border-top: none
+        border-left: none
+        border-right: none
+        width: 100%
+        border-bottom: 1px solid $borderColor
+        outline: none
+        font-size: 16px
+
+        &::-webkit-input-placeholder
+          color: $placeholderColor
+        &::-moz-placeholder
+          color: $placeholderColor
+        &:-ms-input-placeholder
+          color: $placeholderColor
+        &:-moz-placeholder
+          color: $placeholderColor
+
+      .search-button
+        width: 25px
+        height: 25px
+        outline: none
+        border: none
+        position: absolute
+        top: 7px
+        right: 25px
+        background-color: transparent
+        cursor: pointer
+
+      i
+        color: #848484
+
+        &:hover
+          color: #585858
+
+    .avatar
+      width: 64px
+      height: 64px
+      border-radius: 50%
+      overflow: hidden
+
+      img
+        width: 64px
+        height: 64px
+
+    .contact-list-container
+      height: 95%
+      overflow-y: auto
+
+      .contact-item
+        padding: 15px
+        display: flex
+        cursor: pointer
+
+        &:not(:last-child)
+          border-bottom: 1px solid $borderColor
+
+        &:hover
+          background-color: #F2F2F2
+
+        .contact-content
+          display: flex
+          flex-direction: column
+          justify-content: flex-start
+          padding-left: 20px
+          width: 80%
+          color: #585858
+          font-weight: 500
+
+          .contact-content-title
+            display: flex
+            justify-content: space-between
+            font-weight: 700
+
+          .message
+            height: 40px
+            color: #BDBDBD
+            overflow: hidden
+
+    /** Message list **/
+    .message-list-container
+      height: 95%
+      overflow-y: auto
+
+      .outcoming
+        justify-content: flex-end
+
+      .message-item
+        display: flex
+        padding: 15px
+
+      .message-content-container
+        padding-left: 20px
+        width: 60%
+
+        .message-text
+          padding: 10px
+          border-radius: 4px
+
+        .incoming-message
+          color: $incomingMessageColor
+          background-color: $incomingMessageBgColor
+
+        .outcoming-message
+          color: $outcomingMessageColor
+          background-color: $outcomingMessageBgColor
+
+        .message-date
+          padding-top: 10px
+          font-size: 12px
+          color: #BDBDBD
+
+    .message-send-container
+      height: 50px
+      line-height: 28px
+      padding: 10px 25px
+      display: flex
+      justify-content: space-between
+      border-top: 1px solid $borderColor
+
+      .send-message-text
+        color: $inputTextColor
+        font-size: 16px
+        width: 90%
+        border: none
+        outline: none
+
+        &::-webkit-input-placeholder
+          color: $placeholderColor
+        &::-moz-placeholder
+          color: $placeholderColor
+        &:-ms-input-placeholder
+          color: $placeholderColor
+        &:-moz-placeholder
+          color: $placeholderColor
+
+    .send-message-button
+      position: relative
+      color: #fff
+      width: 30px
+      height: 30px
+      border: none
+      outline: none
+      border-radius: 50%
+      background-color: $outcomingMessageBgColor
+
+      i
+        position: absolute
+        top: 6px
+        left: 4px
+        font-size: 18px
+
+    .send-message-button:focus
+      outline: none
+
+@media screen and (max-width: 767px)
+  .main
+    margin-top: 0
+    margin-bottom: 0
+    border: 0
+
+    .column
+      border: 0
