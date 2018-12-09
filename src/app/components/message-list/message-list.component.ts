@@ -29,7 +29,17 @@ export class MessageListComponent implements OnInit {
       if (response === undefined) {
         return;
       }
-      this.messages = response;
+      this.messages = response.sort(function (a, b) {
+        if (Date.parse(a.createdAt) > Date.parse(b.createdAt)) {
+          return 1;
+        }
+        if (Date.parse(a.createdAt) < Date.parse(b.createdAt)) {
+          return -1;
+        }
+        return 0;
+      });
+
+
       this.avatar = avatar;
     }, () => {
       this.isEmpty = true;

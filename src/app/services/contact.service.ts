@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import {Inject, Injectable} from '@angular/core';
 import { Observable } from 'rxjs';
 
 import {Contact} from '../interfaces/contact.interface';
@@ -7,10 +7,18 @@ import {Contact} from '../interfaces/contact.interface';
 @Injectable()
 export class ContactService {
 
-  constructor(private http: HttpClient) {}
+  constructor(
+    @Inject('Config') private config,
+    private http: HttpClient
+  ) {}
 
+  /**
+   * Returns list of contacts.
+   *
+   * @return Observable<Contact[]>
+   */
   index(): Observable<Contact[]> {
-    return this.http.get<Contact[]>(`https://5c0a5f4b26902800135f6c0a.mockapi.io/api/v1/contacts`);
+    return this.http.get<Contact[]>(`${this.config.apiUrl}/contacts`);
   }
 
 }

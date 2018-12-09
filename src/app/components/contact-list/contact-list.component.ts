@@ -21,7 +21,15 @@ export class ContactListComponent implements OnInit {
         return;
       }
 
-      this.contacts = response;
+      this.contacts = response.sort(function (a, b) {
+        if (Date.parse(a.createdAt) < Date.parse(b.createdAt)) {
+          return 1;
+        }
+        if (Date.parse(a.createdAt) > Date.parse(b.createdAt)) {
+          return -1;
+        }
+        return 0;
+      });
     });
   }
 

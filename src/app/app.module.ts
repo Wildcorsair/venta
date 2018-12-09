@@ -3,6 +3,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import Config from './app.config';
 import { ContactListComponent } from './components/contact-list/contact-list.component';
 import { MessageListComponent } from './components/message-list/message-list.component';
 import { ContactItemComponent } from './components/contact-list/contact-item/contact-item.component';
@@ -21,7 +22,10 @@ import { MessageService } from './services/message.service';
     BrowserModule,
     HttpClientModule
   ],
-  providers: [MessageService],
+  providers: [
+    MessageService,
+    {provide: 'Config', useValue: Config}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
