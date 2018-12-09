@@ -1,0 +1,11 @@
+<div *ngFor="let message of messages" class="message-item" [ngClass]="message.isIncoming ? 'incoming' : 'outcoming'">
+  <div *ngIf="message.isIncoming" class="avatar">
+    <img src="{{ avatar }}" alt="Avatar">
+  </div>
+  <div class="message-content-container">
+    <div class="message-text" [ngClass]="message.isIncoming ? 'incoming-message' : 'outcoming-message'">
+      {{ message.content }}
+    </div>
+    <div class="message-date">{{ message.createdAt | date:'h:mm a | MMM d' }}</div>
+  </div>
+</div>
